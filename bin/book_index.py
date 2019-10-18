@@ -1,13 +1,12 @@
 #!/usr/bin/python
-"""Book search engine.
-
+"""
 This module executes a simple search for books given a term-based query. The
 query is capture from STDIN and executed on an indexed data structure
 containing books' information. The result is displayed on STDOUT and outputs
 the top 10 matches ordered by their tf*idf scores.
 
 Example:
-    $ python solution.py --data './data/title_author.tab.txt'
+    $ python solution.py --data './data/main_restaurant.csv'
 
     book_index Loading books...
     book Loading books from file...
@@ -41,7 +40,7 @@ log_format = '%(asctime)s - %(levelname)s - %(module)s : %(lineno)d - %(message)
 logging.basicConfig(level=log_level, format=log_format)
 logger = logging.getLogger(__name__)
 
-CATALOG_FILENAME = 'data/min_title_author.tab.txt' if DEBUG else 'data/title_author.tab.txt'
+CATALOG_FILENAME = 'data/min_main_restaurant.csv' if DEBUG else 'data/main_restaurant.csv'
 
 
 def execute_search(data_location):
